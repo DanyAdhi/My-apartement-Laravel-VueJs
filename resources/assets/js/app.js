@@ -1,21 +1,22 @@
 import Vue from 'vue';
-import sample from './data';
-// import "core-js/fn/object/assign";
+import { populateAmenitiesAndPrices } from './helpers';
+let model = JSON.parse(window.vuebnb_listing_model);
+model = populateAmenitiesAndPrices(model);
 
 var app = new Vue({
     el: '#app',
-    data : Object.assign(sample, {
+    data : Object.assign(model, {
         // title       : 'My Appartement',
         // address     : 'Ruko Boulevard Tekno, Jl. Tekno Widya, Setu, Kec. Setu, Kota Tangerang Selatan, Banten 15314',
         // about       : 'This is a description of my apartement'
-        title       : sample.title,
-        address     : sample.address,
-        about       : sample.about,
+        title       : model.title,
+        address     : model.address,
+        about       : model.about,
         headerImageStyle : {
-            'background-image' : 'url(/images/header.jpg)'
+            'background-image' : `url(${model.images[0]})`
         },
-        amenities   : sample.amenities,
-        prices      : sample.prices,
+        amenities   : model.amenities,
+        prices      : model.prices,
         contracted  : true,
         modalOpen   : false,
     }), 
@@ -47,6 +48,3 @@ var app = new Vue({
     }
     
 });
-
-
-console.log('testing watch');

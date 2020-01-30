@@ -9,7 +9,7 @@
 
   <script>
     var model = "{!! addslashes(json_encode($model)) !!}";
-    console.log(JSON.parse(model))
+    window.vuebnb_listing_model = "{!! addslashes(json_encode($model)) !!}"
   </script>
 
 </head>
@@ -71,7 +71,7 @@
         &times;
       </button>
       <div class="modal-content">
-        <img src="{{ asset('images/header.jpg') }}"/>
+        <img v-bind:src="images[0]"/>
       </div>
     </div>
 
