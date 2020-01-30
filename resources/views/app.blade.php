@@ -71,7 +71,7 @@
         &times;
       </button>
       <div class="modal-content">
-        <img v-bind:src="images[0]"/>
+        <image-carousel :images="images"></image-carousel>
       </div>
     </div>
 
