@@ -6,9 +6,6 @@ model = populateAmenitiesAndPrices(model);
 var app = new Vue({
     el: '#app',
     data : Object.assign(model, {
-        // title       : 'My Appartement',
-        // address     : 'Ruko Boulevard Tekno, Jl. Tekno Widya, Setu, Kec. Setu, Kota Tangerang Selatan, Banten 15314',
-        // about       : 'This is a description of my apartement'
         title       : model.title,
         address     : model.address,
         about       : model.about,
