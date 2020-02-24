@@ -38,8 +38,8 @@ let populateAmenitiesAndPrices = function(state) {
 
   obj.amenities = obj.amenities.map(item => amenities.get(item) );
 
-  obj.prices = obj.prices.map(item => {
-    item.title = prices.get(item.title);
+  obj.prices    = obj.prices.map(item => {
+    item.title  = prices.get(item.title);
     return item;
   });
 

@@ -1,8 +1,10 @@
 <?php
-use App\Listing;
+// use App\Listing;
+
+Route::get('/home', 'ListingController@get_home_web');
 
 Route::get('/', function () {
-    return view('app');
+   return redirect('/home');
 });
 
 // Route::get('listing/{listing}', function(Listing $listing){
@@ -10,4 +12,4 @@ Route::get('/', function () {
 //     return view('app', ['model'=>$model]);
 // });
 
-Route::get('/listing/{listing}', 'ListingController@get_listing_web');
+Route::get('/listing/{listing?}', 'ListingController@get_listing_web');
